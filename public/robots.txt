@@ -1,0 +1,5 @@
+# https://effectt.aipresso.uk/ — Effectt product site (subdomain only)
+User-agent: *
+Allow: /
+
+Sitemap: https://effectt.aipresso.uk/sitemap.xml

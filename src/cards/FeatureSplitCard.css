@@ -1,0 +1,45 @@
+.feature-split-card {
+  align-items: stretch;
+  text-align: left;
+}
+
+.feature-split-card__split {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.feature-split-card__buttons {
+  flex-shrink: 0;
+}
+
+.feature-split-card__buttons .feature-solo-btn {
+  width: 100%;
+  min-width: 200px;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+.feature-split-card__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-split-card__text .content-card__headline {
+  text-align: left;
+  margin: 0 0 24px;
+  max-width: none;
+}
+
+.feature-split-card__text .content-card__body {
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .feature-split-card__split {
+    flex-direction: column;
+  }
+}

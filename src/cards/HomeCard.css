@@ -1,0 +1,72 @@
+.home-card {
+  position: relative;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  padding-bottom: 80px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.home-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 68px;
+  width: 100%;
+}
+
+.home-card__title {
+  margin: 0;
+  font-family: Arial;
+  font-weight: 700;
+  color: #000;
+  font-size: 190px;
+  line-height: 190px;
+  letter-spacing: 50px;
+}
+
+.home-card__subtitle {
+  margin: 0;
+  max-width: 1200px;
+  color: #fff;
+  font-style: italic;
+  font-family:
+    'Segoe Script',
+    'Chalkboard',
+    'Apple Chancery',
+    Arial,
+    sans-serif;
+  font-size: 60px;
+  line-height: 81px;
+}
+
+.home-card__explore {
+  position: absolute;
+  bottom: -94px;
+  right: 150px;
+  margin: 0;
+  padding: 14px 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.home-card__explore:hover {
+  background: #fff;
+}
+
+.home-card__explore:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}

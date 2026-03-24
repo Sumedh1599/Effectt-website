@@ -1,0 +1,58 @@
+:root {
+  --text-h: #08060d;
+  --titlebar-height: 64px;
+  /* Space between fixed title bar and card when scrolling to a section */
+  --titlebar-scroll-gap: 28px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-h: #f3f4f6;
+  }
+}
+
+/* From Uiverse.io by catraco */
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+body.container {
+  width: 100%;
+  min-height: 100%;
+  min-height: 100svh;
+  background:
+    repeating-linear-gradient(
+      40deg,
+      rgba(255, 166, 0, 0.444),
+      rgba(255, 68, 0, 0.469) 50px,
+      rgba(255, 166, 0, 0.278) 60px,
+      rgba(255, 68, 0, 0.34) 80px
+    )
+    rgb(255, 1, 1);
+  background-blend-mode: screen;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+section[id$='-card'] {
+  scroll-margin-top: calc(
+    var(--titlebar-height) + var(--titlebar-scroll-gap)
+  );
+}

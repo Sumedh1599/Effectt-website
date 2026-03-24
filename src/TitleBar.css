@@ -1,0 +1,97 @@
+.titlebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+.titlebar__inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.titlebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.titlebar__brand:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.titlebar__logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.titlebar__name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.titlebar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.titlebar__link {
+  position: relative;
+  margin: 0;
+  padding: 10px 16px 14px;
+  border: none;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #000;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.titlebar__link:hover {
+  opacity: 0.75;
+}
+
+.titlebar__link:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.titlebar__link--active::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 3px;
+  background: #000;
+  border-radius: 1px;
+}
