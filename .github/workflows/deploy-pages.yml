@@ -1,5 +1,9 @@
-# Build Vite → upload dist/ so Pages serves compiled JS (not /src/*.jsx).
-# Repo Settings → Pages → Build: GitHub Actions (not “Deploy from a branch”).
+# Builds Vite → pushes only dist/ to branch `gh-pages`.
+# Browsers never see .jsx; they get compiled /assets/*.js.
+#
+# GitHub: Settings → Pages → Build: Deploy from a branch
+#         Branch: gh-pages  /  folder: / (root)
+# After the first successful run, pick `gh-pages` from the branch dropdown.
 
 name: Deploy to GitHub Pages
 
@@ -8,35 +12,29 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
+
       - run: npm ci
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish dist to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
