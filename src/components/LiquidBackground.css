@@ -1,0 +1,22 @@
+.liquid-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.85;
+}
+
+.liquid-background canvas,
+.liquid-background svg {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

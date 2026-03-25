@@ -1,5 +1,6 @@
 import './App.css'
 import TitleBar from './TitleBar'
+import LiquidBackground from './components/LiquidBackground'
 import { scrollToSection } from './scrollToSection'
 import HomeCard from './cards/HomeCard'
 import DemoCard from './cards/DemoCard'
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+      <LiquidBackground />
       <TitleBar />
       <main className="home">
         <div className="home__stage">
